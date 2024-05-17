@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid $border-bottom-Cup;
+  border-bottom: 1px solid $border-bottom-cap;
 }
 
 .nav {
@@ -16,7 +16,7 @@
   h2 {
     font-weight: 700;
     font-size: convertPX(16);
-    color: $color-Link-Cup
+    color: $color-Link-cap;
   }
 
   .active {

@@ -1,4 +1,4 @@
-export const linkCut = [
+export const linkCat = [
   {
     title: 'Главная',
     href: '/',
