@@ -1,0 +1,35 @@
+@import "styles/variabals";
+@import "styles/mixins";
+
+.wrapper {
+  position: relative;
+  display: flex;
+  gap:  convertPX(5);
+  padding: convertPX(10);
+  border-radius: 8px;
+  background: $background-input-search-cup;
+}
+
+.icon_search {
+  color: $color-icon-search-cup;
+  scale: 1.3;
+  margin-right: convertPX(10)
+}
+
+.icon_close {
+  position: absolute;
+  scale: 1.3;
+  right: convertPX(10);
+  cursor: pointer;
+  color: $color-icon-search-cup;
+}
+
+.input {
+  background: transparent;
+  color: $color-text-search-cup;
+  margin-right: convertPX(20);
+
+  &:focus {
+    outline: none;
+  }
+}

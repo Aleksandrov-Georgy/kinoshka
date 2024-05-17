@@ -10,6 +10,10 @@
 body {
   background-color: $background;
   color: $text-page;
+  max-width: convertPX(1200);
+  width: 83%;
+  margin: auto;
+  height: 100dvh;
 }
 
 *,

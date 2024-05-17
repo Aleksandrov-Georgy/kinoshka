@@ -1,6 +1,7 @@
 import Header from '@/Components/Header/Header';
-import Home from '@/app/(main)/page';
 import Footer from '@/Components/Footer/Footer';
+
+import S from '../main.module.scss';
 
 interface AppLayoutProps {
   children: React.ReactNode;
@@ -10,11 +11,11 @@ interface AppLayoutProps {
 export default function AppLayout({ children }: AppLayoutProps) {
   return (
     <>
-      <header>
+      <header className={S.header}>
         <Header />
       </header>
       <main>{children}</main>
-      <footer>
+      <footer className={S.footer}>
         <Footer />
       </footer>
     </>

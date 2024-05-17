@@ -1,9 +1,27 @@
+'use client';
+
 import S from './header.module.scss';
+import Link from 'next/link';
+import { linkCut } from '@/Components/Header/Components/linkCut';
+import { usePathname } from 'next/navigation';
+import Search from '@/Components/Header/Components/Search/Search';
 
 export default function Header() {
+  const path = usePathname();
+
   return (
     <div className={S.header}>
-      <h1>HEADER CUT</h1>
+      <Link href={'/'}>
+        <h1 className={S.logo}>LOGO</h1>
+      </Link>
+      <nav className={S.nav}>
+        {linkCut.map((linkCut) => (
+          <Link key={linkCut.id} href={linkCut.href}>
+            <h2 className={path === linkCut.href ? `${S.active}` : ''}>{linkCut.title}</h2>
+          </Link>
+        ))}
+      </nav>
+      <Search />
     </div>
   );
 }

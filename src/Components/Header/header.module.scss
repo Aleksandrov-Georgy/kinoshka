@@ -1,1 +1,31 @@
-.header {}
+@import "../../../styles/mixins";
+@import "../../../styles/variabals";
+
+.header {
+  padding: convertPX(20) 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid $border-bottom-Cup;
+}
+
+.nav {
+  display: flex;
+  gap: convertPX(30);
+
+  h2 {
+    font-weight: 700;
+    font-size: convertPX(16);
+    color: $color-Link-Cup
+  }
+
+  .active {
+    font-size: convertPX(16);
+    scale: 1.4;
+    color: $text-page;
+  }
+}
+
+.logo {
+  font-size: convertPX(40);
+}
