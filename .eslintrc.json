@@ -1,0 +1,82 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:react/recommended",
+    "airbnb",
+    "airbnb-typescript",
+    "prettier"
+  ],
+  "overrides": [
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "react",
+    "prettier",
+    "unused-imports"
+  ],
+  "rules": {
+    "prettier/prettier": ["error"],
+    "react/jsx-wrap-multilines": "off",
+    "react/function-component-definition": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "react/require-default-props": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "no-nested-ternary": "off",
+    "jsx-a11y/props-no-functions": "off",
+    "arrow-body-style": "off",
+    "react/jsx-props-no-spreading": "off",
+    "jsx-a11y/label-has-associated-control": ["warn", {
+      "required": {
+        "some": ["nesting", "id"]
+      }
+    }],
+    "jsx-a11y/label-has-for": ["warn", {
+      "required": {
+        "some": ["nesting", "id"]
+      }
+    }],
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    // Отключение ошибок от airbnb
+
+    "react/jsx-no-leaked-render": ["warn", { "validStrategies": ["ternary", "coerce"] }],
+    "react/no-multi-comp": ["warn"],
+    "react/no-namespace": ["warn"],
+    "@typescript-eslint/no-explicit-any": "warn",
+    "react/no-array-index-key": "warn",
+    "@typescript-eslint/naming-convention": "warn",
+    "react/button-has-type": "warn",
+    "no-param-reassign": "warn",
+    "import/no-cycle": "warn",
+    "jsx-a11y/no-autofocus": "warn",
+    "@typescript-eslint/no-shadow": "warn",
+    "jsx-a11y/anchor-is-valid": "warn",
+    "react/style-prop-object": "warn",
+    "no-restricted-syntax": "warn",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "consistent-return": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "import/prefer-default-export": "off",
+    "jsx-a11y/no-noninteractive-tabindex": "off",
+    "@next/next/no-img-element": "warn"
+  }
+}
+
