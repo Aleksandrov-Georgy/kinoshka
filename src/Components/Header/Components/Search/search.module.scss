@@ -18,14 +18,14 @@
     padding: 0 convertPX(15);
     line-height: convertPX(40);
     border-radius: convertPX(8);
-    border: convertPX(1) solid rgba(255, 255, 255, 0.594);
+    border: convertPX(1) solid $label-search;
     background: transparent;
     transition: 0.1s ease;
     z-index: 1111;
     color: $text-page;
 
     &:focus, &:valid {
-      border: convertPX(1) solid rgba(255, 255, 255, 1);
+      border: convertPX(1) solid $border;
     }
     &:focus + .label,
     &:valid + .label {
@@ -46,7 +46,7 @@
   background-color: transparent;
   position: absolute;
   font-size: convertPX(16);
-  color: rgba(255, 255, 255, 0.594);
+  color: $label-search;
   padding: 0 convertPX(8);
   margin: 0 convertPX(15);
   transition: .2s ease;

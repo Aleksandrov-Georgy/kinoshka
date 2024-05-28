@@ -11,18 +11,39 @@
 
 .nav {
   display: flex;
-  gap: convertPX(30);
+  gap: convertPX(40);
 
   h2 {
+    position: relative;
     font-weight: 700;
     font-size: convertPX(16);
-    color: $color-Link-cap;
+    color: $color-Link-cap; 
+    transition: .3s ease;
+    
+    &:hover {
+      color: $color-Link-hover;
+    }
+  }
+
+  h2::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: $text-page;
+    transition: .3s ease;
+  }
+
+  h2:hover::before {
+    width: 100%;
   }
 
   .active {
     font-size: convertPX(16);
-    scale: 1.4;
     color: $text-page;
+    border-bottom: 1px solid $text-page;
   }
 }
 
