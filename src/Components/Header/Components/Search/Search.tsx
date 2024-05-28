@@ -9,15 +9,17 @@ export default function Search() {
   const [searchText, setSearchText] = useState<string | number>('');
   return (
     <div className={S.wrapper}>
-      <CiSearch className={S.icon_search} />
+      <div className={S.container}>
       <input
         value={searchText}
         className={S.input}
         type="text"
-        placeholder={'Поиск'}
         onChange={(e) => setSearchText(e.target.value)}
+        required
       />
+      <div className={S.label}>Поиск</div>
       {searchText && <IoMdClose className={S.icon_close} onClick={() => setSearchText('')} />}
+      </div>
     </div>
   );
 }

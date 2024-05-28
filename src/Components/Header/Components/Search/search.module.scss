@@ -1,35 +1,63 @@
-@import "styles/variabals";
-@import "styles/mixins";
+@import "/styles/variabals";
+@import "/styles/mixins.scss";
 
 .wrapper {
-  position: relative;
-  display: flex;
-  gap:  convertPX(5);
-  padding: convertPX(10);
-  border-radius: 8px;
-  background: $background-input-search-cap;
+  width: 30%;
 }
 
-.icon_search {
-  color: $color-icon-search-cap;
-  scale: 1.3;
-  margin-right: convertPX(10)
+.container {
+  position: relative;
+  height: convertPX(40);
+  line-height: convertPX(40);
+
+  input {
+    position: absolute;
+    width: 100%;
+    outline: none;
+    font-size: convertPX(16);
+    padding: 0 convertPX(15);
+    line-height: convertPX(40);
+    border-radius: convertPX(8);
+    border: convertPX(1) solid rgba(255, 255, 255, 0.594);
+    background: transparent;
+    transition: 0.1s ease;
+    z-index: 1111;
+    color: $text-page;
+
+    &:focus, &:valid {
+      border: convertPX(1) solid rgba(255, 255, 255, 1);
+    }
+    &:focus + .label,
+    &:valid + .label {
+      color: $text-page;
+      height: convertPX(30);
+      line-height: convertPX(30);
+      transform: translate(convertPX(-15), convertPX(-15)) scale(0.7);
+      z-index: 1112;
+      background-color: $background;
+
+    }
+  }
+
+
+}
+
+.label {
+  background-color: transparent;
+  position: absolute;
+  font-size: convertPX(16);
+  color: rgba(255, 255, 255, 0.594);
+  padding: 0 convertPX(8);
+  margin: 0 convertPX(15);
+  transition: .2s ease;
 }
 
 .icon_close {
   position: absolute;
+  top: convertPX(12);
   scale: 1.3;
   right: convertPX(10);
   cursor: pointer;
-  color: $color-icon-search-cap;
-}
-
-.input {
-  background: transparent;
-  color: $color-text-search-cap;
-  margin-right: convertPX(20);
-
-  &:focus {
-    outline: none;
-  }
+  color: $text-page;
+  z-index: 10000;
 }
