@@ -63,20 +63,19 @@ $width-card: convertPX(250);
 .title {
   position: relative;
   max-width: convertPX(250);
-  font-size: convertPX(36);
+  font-size: convertPX(14);
   position: absolute;
   top: convertPX(10);
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
 
   &::after{
     content: '';
     position: absolute;
-    height: convertPX(4);
+    height: convertPX(7);
     background: $text-page;
     left: 0;
-    bottom: -2px;
+    bottom: convertPX(-7);
     width: 100%;
     transform: scaleX(0);
     transform-origin: left;

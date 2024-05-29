@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { Inter, Montserrat } from 'next/font/google';
-import Provider from '@/provider';
 import 'normalize.css/normalize.css';
 import '../../styles/global.scss';
 import { Roboto } from 'next/font/google';
@@ -25,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body>
-        <Provider>{children}</Provider>
+      {children}
       </body>
     </html>
   );
