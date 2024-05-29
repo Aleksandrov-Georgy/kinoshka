@@ -1,4 +1,6 @@
-$width: 24px;
+@import '/styles//mixins.scss';
+
+$width: convertPX(26);
 
 @keyframes rotate {
   0%, 15% { transform: rotateX(0deg)};
@@ -14,16 +16,16 @@ $width: 24px;
 .panel {
   position: relative;
   width: $width;
-  height: 24px;
+  height: convertPX(30);
   overflow: hidden;
-  animation: rotate 4s var(--delay) infinite ease-in-out;
+  animation: rotate 3s var(--delay) infinite ease-in-out;
 }
 
 .panel::before {
   position: absolute;
   left: var(--left);
   content: 'фильмы всего мира';
-  font-size: 22px;
+  font-size: convertPX(26);
   width: max-content;
   color: hsl(var(--hue), 75%, 75%);
 }
