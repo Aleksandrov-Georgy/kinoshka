@@ -1,10 +1,12 @@
+import Card from '@/Components/Main/Card';
 import S from '../main.module.scss';
-import Header from '@/Components/Header/Header';
+import { film } from './data'
 
 export default function Home() {
+
   return (
     <div className={S.wrapper}>
-      <h1>MAIN</h1>
+      <Card films={film}/>
     </div>
   );
 }

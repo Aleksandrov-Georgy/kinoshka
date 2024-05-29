@@ -15,7 +15,7 @@
     width: 100%;
     outline: none;
     font-size: convertPX(16);
-    padding: 0 convertPX(15);
+    padding: 0 convertPX(25) 0 convertPX(15);
     line-height: convertPX(40);
     border-radius: convertPX(8);
     border: convertPX(1) solid $label-search;
@@ -32,9 +32,9 @@
       color: $text-page;
       height: convertPX(30);
       line-height: convertPX(30);
-      transform: translate(convertPX(-15), convertPX(-15)) scale(0.7);
+      transform: translate(convertPX(-15), convertPX(-10)) scale(0);
       z-index: 1112;
-      background-color: $background;
+      background-color: transparent;
 
     }
   }

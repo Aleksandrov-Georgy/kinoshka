@@ -1,10 +1,12 @@
-@import '/styles//mixins.scss';
+@import '/styles/mixins.scss';
+@import '/styles/variabals.scss';
+
 
 $width: convertPX(26);
 
 @keyframes rotate {
-  0%, 15% { transform: rotateX(0deg)};
-  85%, 100% { transform: rotateX(360deg)};
+  0%, 30% { transform: rotateX(0deg)};
+  70%, 100% { transform: rotateX(360deg)};
 
 }
 
@@ -18,7 +20,7 @@ $width: convertPX(26);
   width: $width;
   height: convertPX(30);
   overflow: hidden;
-  animation: rotate 3s var(--delay) infinite ease-in-out;
+  animation: rotate 5s var(--delay) infinite ease-in-out;
 }
 
 .panel::before {
@@ -27,7 +29,7 @@ $width: convertPX(26);
   content: 'фильмы всего мира';
   font-size: convertPX(26);
   width: max-content;
-  color: hsl(var(--hue), 75%, 75%);
+  color: $text-page;
 }
 
 @for $i from 0 to 10 {
