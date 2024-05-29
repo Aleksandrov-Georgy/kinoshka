@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { linkCat } from '@/Components/Header/Components/linkCat';
 import { usePathname } from 'next/navigation';
 import Search from '@/Components/Header/Components/Search/Search';
+import Logo from './Components/Logo/logo';
 
 export default function Header() {
   const path = usePathname();
@@ -12,7 +13,7 @@ export default function Header() {
   return (
     <div className={S.header}>
       <Link href={'/'}>
-        <h1 className={S.logo}>LOGO</h1>
+        <Logo/>
       </Link>
       <nav className={S.nav}>
         {linkCat.map((linkCut) => (

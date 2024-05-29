@@ -1,6 +1,4 @@
 import Header from '@/Components/Header/Header';
-import Footer from '@/Components/Footer/Footer';
-
 import S from '../main.module.scss';
 
 interface AppLayoutProps {
@@ -15,9 +13,6 @@ export default function AppLayout({ children }: AppLayoutProps) {
         <Header />
       </header>
       <main>{children}</main>
-      <footer className={S.footer}>
-        <Footer />
-      </footer>
     </>
   );
 }
