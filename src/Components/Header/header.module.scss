@@ -2,7 +2,7 @@
 @import "../../../styles/variabals";
 
 .header {
-  padding: convertPX(20) 0;
+  padding: convertPX(20) convertPX(40);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -12,6 +12,7 @@
 .nav {
   display: flex;
   gap: convertPX(40);
+  transform: translateX(convertPX(-90));
 
   h2 {
     position: relative;
@@ -46,7 +47,3 @@
     border-bottom: 1px solid $text-page;
   }
 }
-
-// .logo {
-//   font-size: convertPX(40);
-// }

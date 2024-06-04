@@ -5,7 +5,7 @@ interface AppLayoutProps {
   children: React.ReactNode;
 }
 
-// лейаут основного приложения
+// лайаут основного приложения
 export default function AppLayout({ children }: AppLayoutProps) {
   return (
     <>

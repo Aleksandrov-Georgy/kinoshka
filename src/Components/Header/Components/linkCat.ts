@@ -1,22 +1,17 @@
 export const linkCat = [
   {
-    title: 'Главная',
+    title: 'Фильмы',
     href: '/',
     id: 1,
   },
   {
-    title: 'Коллекции',
+    title: 'Мультфильмы',
     href: '#',
     id: 2,
   },
   {
-    title: 'ТОП-250',
+    title: 'Боевики',
     href: '#',
-    id: 3,
-  },
-  {
-    title: 'ТОП-500',
-    href: '#',
-    id: 4,
+    id: 2,
   },
 ];

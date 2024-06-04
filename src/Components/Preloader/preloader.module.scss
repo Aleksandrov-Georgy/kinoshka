@@ -1,0 +1,46 @@
+@import "/styles/mixins";
+@import "/styles/variabals";
+
+.preloader {
+    z-index: 10000000;
+    display: block;
+    position: relative;
+    width: convertPX(50);
+    height: convertPX(50);
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: #ca4321;
+    animation: preloader-spin 2s linear infinite;
+}
+.preloader:before {
+    content: "";
+    position: absolute;
+    top: convertPX(5);
+    left: convertPX(5);
+    right: convertPX(5);
+    bottom: convertPX(5);
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: #BFE2FF;
+    animation: preloader-spin 3s linear infinite;
+}
+.preloader:after {
+    content: "";
+    position: absolute;
+    top: convertPX(15);
+    left: convertPX(15);
+    right: convertPX(15);
+    bottom: convertPX(15);
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: #337AB7;
+    animation: preloader-spin 1.5s linear infinite;
+}
+@keyframes preloader-spin {
+    0%   {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

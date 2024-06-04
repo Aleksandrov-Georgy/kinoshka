@@ -1,3 +1,7 @@
+export interface  FilmsType {
+  films: FilmType[];
+}
+
 export interface FilmType {
   id: number;
   externalId: ExternalId;

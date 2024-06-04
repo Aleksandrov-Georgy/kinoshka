@@ -1,6 +1,5 @@
 import axios, { AxiosResponse } from "axios"
 import { BASE_URL } from "./baseURL";
-import { useQuery } from "@tanstack/react-query";
 
 const api = axios.create({
   baseURL: BASE_URL,
@@ -15,7 +14,6 @@ class MoviesAPI {
   static async getMovies(page:string): Promise<AxiosResponse<any>> {
     return api.get(`v1.4/movie?page=${page}&limit=32`);
   }
-
 }
 
 export default MoviesAPI;

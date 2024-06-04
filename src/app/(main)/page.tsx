@@ -1,21 +1,38 @@
+'use client';
+
 import Card from '@/Components/Main/Card';
 import S from '../main.module.scss';
-// import { film } from './data'
+
+// import MainFilmsPage from '@/Components/Main/MainFilmsPage/MainFilmsPage';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { addFilms } from '@/redux/rootSlice';
 import MoviesAPI from '@/api/getMovies';
-import { useState } from 'react';
-import { FilmType } from '../../../types/filmType';
 
+export default function Home() {
+  const dispatch = useDispatch();
 
-
-export default async function Home() {
-const randomPage = Math.floor(Math.random() * 100)
-
-const {data} = await MoviesAPI.getMovies(randomPage.toString())
+  useEffect(()  => {
+    getData();
+  },[])
   
+  async function getData () {
+    const page = Math.floor(Math.random() * 1000)
+    
+    try {
+      const data = await MoviesAPI.getMovies(page.toString());
+      console.log(data)
+      dispatch(addFilms(data.data.docs));
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
-  return (
+   return (
+   <>
     <div className={S.wrapper}>
-      {data.docs ? data.docs.map((el: FilmType) => <Card films={el}/>) : 'загрузка'}
+      <Card />
     </div>
+   </>
   );
 }

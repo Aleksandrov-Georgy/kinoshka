@@ -1,0 +1,63 @@
+@import "/styles/mixins.scss";
+@import "/styles/variabals";
+
+.wrapper {
+  --clr-neon: hsl(317 100% 54%);
+}
+
+.neon_button {  
+  position: relative;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: convertPX(24);
+  color: var(--clr-neon);
+  cursor: pointer;
+  border: var(--clr-neon) 3px solid;
+  background: transparent;
+  padding: convertPX(8);
+  border-radius: convertPX(5);
+
+  text-shadow: 0 0 0.45em currentColor ;
+
+   box-shadow: 
+   inset 0 0 1em var(--clr-neon),
+   0 0 1em var(--clr-neon);
+   transition: .1s linear;
+}
+
+.neon_button::before {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  background: var(--clr-neon);
+  top: 80%;
+  right: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.5);
+  filter: blur(1em);
+  opacity: 0.7;
+}
+
+.neon_button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  box-shadow: 0 0 2em .5em var(--clr-neon);
+  opacity: 0;
+  transition: .1s linear;
+}
+
+.neon_button:hover {
+  background: var(--clr-neon);
+  color: $background;
+  text-shadow: none;
+}
+
+.neon_button:hover::after {
+  opacity: 1;
+}

@@ -4,7 +4,6 @@ import S from './header.module.scss';
 import Link from 'next/link';
 import { linkCat } from '@/Components/Header/Components/linkCat';
 import { usePathname } from 'next/navigation';
-import Search from '@/Components/Header/Components/Search/Search';
 import Logo from './Components/Logo/logo';
 
 export default function Header() {
@@ -22,7 +21,6 @@ export default function Header() {
           </Link>
         ))}
       </nav>
-      <Search />
     </div>
   );
 }

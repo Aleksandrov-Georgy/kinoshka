@@ -3,6 +3,7 @@ import { Inter, Montserrat } from 'next/font/google';
 import 'normalize.css/normalize.css';
 import '../../styles/global.scss';
 import { Roboto } from 'next/font/google';
+import { StoreProvider } from '@/redux/store/StoreProvider';
 
 const roboto = Montserrat({
   weight: '300',
@@ -22,10 +23,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru">
-      <body>
-      {children}
-      </body>
-    </html>
+    <StoreProvider>
+      <html lang="ru">
+        <body>
+          {children}
+        </body>
+      </html>
+    </StoreProvider>
   );
 }

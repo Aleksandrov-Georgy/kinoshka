@@ -4,6 +4,7 @@
 $width-card: convertPX(250);
 
 .card {
+  cursor: pointer;
   color: $text-page;
   position: relative;
   border-radius: convertPX(20);
@@ -19,7 +20,6 @@ $width-card: convertPX(250);
   &:focus-within .info {
     transform: translateY(0);
     transition-delay: .3s;
-
   }
 
   &:hover .info > *:not(.title)  {
@@ -32,7 +32,6 @@ $width-card: convertPX(250);
   width: $width-card;
   height: convertPX(350);
   border-radius: convertPX(20);
-
 }
 
 .info {
@@ -65,7 +64,7 @@ $width-card: convertPX(250);
   max-width: convertPX(250);
   font-size: convertPX(14);
   position: absolute;
-  top: convertPX(10);
+  top: convertPX(20);
   overflow: hidden;
   text-overflow: ellipsis;
 
