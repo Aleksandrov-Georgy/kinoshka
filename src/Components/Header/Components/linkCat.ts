@@ -1,6 +1,6 @@
 export const linkCat = [
   {
-    title: 'Фильмы',
+    title: 'Все фильмы',
     href: '/',
     id: 1,
   },
@@ -10,8 +10,13 @@ export const linkCat = [
     id: 2,
   },
   {
-    title: 'Боевики',
-    href: '#',
+    title: 'Триллеры',
+    href: '/thrillers',
     id: 3,
+  },
+  {
+    title: 'Комедии',
+    href: '/comedy',
+    id: 4,
   },
 ];

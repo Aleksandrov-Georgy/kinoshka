@@ -14,8 +14,6 @@ export default function Home() {
   const [loading , setLoading] = useState(false);
   const { films } = useSelector((state: rootSliceType) => state.films) as any;
 
-  console.log('films is main', films);
-
   useEffect(()  => {
     getData();
   },[])

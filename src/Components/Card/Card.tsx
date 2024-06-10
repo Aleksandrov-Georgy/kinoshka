@@ -18,6 +18,7 @@ export default function Card({ film }: TProps) {
 
   return (
     <>
+    {film.poster?.previewUrl ?
       <div className={S.card}>
          {isLoaded &&  
             <div className={S.loader}>
@@ -38,6 +39,7 @@ export default function Card({ film }: TProps) {
           <button className={S.button} onClick={() => router.push(`/movie/${film.id}`)}>Информация</button>
         </div>
       </div>
+      : null} 
     </>
   );
 }

@@ -6,13 +6,13 @@ import Card from '@/Components/Card/Card';
 import MoreButton from '@/Components/ButtonMore/More';
 import MoviesAPI from '@/api/getMovies';
 import { useDispatch, useSelector } from 'react-redux';
-import { addCartoons, rootSliceType } from '@/redux/rootSlice';
+import { addComedy, rootSliceType } from '@/redux/rootSlice';
 import { FilmType } from '../../../../types/filmType';
 
-export default function Cartoons() {
+export default function Comedy() {
   const dispatch  =  useDispatch();
   const [loading , setLoading] = useState(false);
-  const  { cartoons } = useSelector((state: rootSliceType) => state.films) as any;
+  const  { comedy } = useSelector((state: rootSliceType) => state.films) as any;
     
   useEffect(()  => {
     getData();
@@ -23,8 +23,8 @@ export default function Cartoons() {
     const page = Math.floor(Math.random() * 100)
     
     try {
-      const data = await MoviesAPI.getCartoons(page.toString());
-      dispatch(addCartoons(data))
+      const data = await MoviesAPI.getComedy(page.toString());
+      dispatch(addComedy(data))
     } catch (error) {
       console.log(error)
     } finally  {
@@ -35,7 +35,7 @@ export default function Cartoons() {
    return (
     <>
     <div className={S.wrapper}>
-      {cartoons && cartoons.map((film: FilmType) => <Card film={film} key={film.id}/>)}
+      {comedy && comedy.map((film: FilmType) => <Card film={film} key={film.id}/>)}
     </div>
     <footer className={S.footer}>
       <MoreButton loading={loading} scalePreloader={1.2} moreFilmsClick={getData}/>
