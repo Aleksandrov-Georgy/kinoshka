@@ -1,105 +1,53 @@
-export interface  FilmsType {
+import { Film } from "./filmTypeRequest";
+
+export interface FilmListType {
   films: FilmType[];
 }
 
 export interface FilmType {
   id: number;
-  externalId: ExternalId;
-  name: string;
+  name?: any;
   alternativeName: string;
-  enName?: string | null;
+  enName?: any;
   names: Name[];
   type: string;
   typeNumber: number;
   year: number;
-  description?: string | null;
-  shortDescription: string;
-  slogan: string;
+  description?: any;
+  shortDescription?: any;
   status?: any;
   rating: Rating;
-  votes: Votes;
+  votes: Rating;
   movieLength: number;
   totalSeriesLength?: any;
   seriesLength?: any;
-  ratingMpaa: string;
-  ageRating: number;
+  ratingMpaa?: any;
+  ageRating?: any;
   poster: Poster;
   backdrop: Poster;
   genres: Genre[];
   countries: Genre[];
-  persons: Person[];
-  budget: Budget;
-  premiere: Premiere;
-  watchability: Watchability;
   top10?: any;
-  top250: number;
+  top250?: any;
   isSeries: boolean;
-  audience: Audience[];
   ticketsOnSale: boolean;
-  lists: string[];
-  networks?: any;
-  createdAt: string;
-  updatedAt: string;
-}
-interface Audience {
-  count: number;
-  country: string;
-}
-interface Watchability {
-  items: Item[];
-}
-interface Item {
-  name: string;
-  logo: Logo;
-  url: string;
-}
-interface Logo {
-  url: string;
-}
-interface Premiere {
-  country?: any;
-  digital?: any;
-  cinema?: any;
-}
-interface Budget {
-  currency: string;
-  value: number;
-}
-interface Person {
-  id: number;
-  photo: string;
-  name: string;
-  enName?: string | null;
-  description?: string | null;
-  profession: string;
-  enProfession: string;
 }
 interface Genre {
   name: string;
 }
 interface Poster {
-  url: string;
-  previewUrl: string;
-}
-interface Votes {
-  kp: number;
-  imdb: number;
-  filmCritics: number;
-  russianFilmCritics: number;
-  await: number;
+  url?: any;
+  previewUrl?: any;
 }
 interface Rating {
   kp: number;
   imdb: number;
   filmCritics: number;
   russianFilmCritics: number;
-  await?: any;
+  await: number;
 }
 interface Name {
   name: string;
-  language?: string | null;
+  language?: any;
   type: string;
-}
-interface ExternalId {
-  kpHD: string;
 }

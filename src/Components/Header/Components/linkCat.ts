@@ -6,12 +6,12 @@ export const linkCat = [
   },
   {
     title: 'Мультфильмы',
-    href: '#',
+    href: '/cartoons',
     id: 2,
   },
   {
     title: 'Боевики',
     href: '#',
-    id: 2,
+    id: 3,
   },
 ];

@@ -1,17 +1,20 @@
 'use client';
 
-import Card from '@/Components/Main/Card';
 import S from '../main.module.scss';
-
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { addFilms } from '@/redux/rootSlice';
 import MoviesAPI from '@/api/getMovies';
 import MoreButton from '@/Components/ButtonMore/More';
+import Card from '@/Components/Card/Card';
+import { FilmType } from '../../../types/filmType';
+import { useDispatch, useSelector } from 'react-redux';
+import { addFilms, rootSliceType } from '@/redux/rootSlice';
 
 export default function Home() {
-  const [loading , setLoading] = useState(false)
-  const dispatch = useDispatch();
+  const dispatch  =  useDispatch();
+  const [loading , setLoading] = useState(false);
+  const { films } = useSelector((state: rootSliceType) => state.films) as any;
+
+  console.log('films is main', films);
 
   useEffect(()  => {
     getData();
@@ -19,12 +22,11 @@ export default function Home() {
   
   async function getData () {
     setLoading(true)
-    const page = Math.floor(Math.random() * 1000)
+    const page = Math.floor(Math.random() * 100)
     
     try {
       const data = await MoviesAPI.getMovies(page.toString());
-      console.log(data.data.docs.films)
-      dispatch(addFilms(data.data.docs));
+      dispatch(addFilms(data))
     } catch (error) {
       console.log(error)
     } finally  {
@@ -35,7 +37,7 @@ export default function Home() {
    return (
    <>
     <div className={S.wrapper}>
-      <Card />
+      {films && films.map((film: FilmType) => <Card film={film} key={film.id} />)}
     </div>
     <footer className={S.footer}>
       <MoreButton loading={loading} scalePreloader={1.2} moreFilmsClick={getData}/>
