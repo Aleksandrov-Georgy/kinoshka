@@ -5,8 +5,10 @@ module.exports = {
         protocol: 'https',
         hostname: 'image.openmoviedb.com',
         port: '',
-        pathname: '/kinopoisk-images/**',
+        pathname: '/**/**',
       },
     ],
   },
 }
+
+// /https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_5006520.jpg

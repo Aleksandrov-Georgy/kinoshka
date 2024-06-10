@@ -1,0 +1,122 @@
+@import '/styles/mixins.scss';
+@import '/styles/variabals.scss';
+
+.wrapper {
+  margin-top: convertPX(130);
+  z-index: 100000;
+  display: flex;
+  gap: convertPX(50);
+}
+
+.loading_image {
+  width: convertPX(390);
+  height: convertPX(530);
+  box-sizing: border-box;
+  border-radius: convertPX(10);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.image_box {
+  width: convertPX(385);
+  height: convertPX(525);
+  box-sizing: border-box;
+  border-radius: convertPX(10);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.image::after {
+  content: '';
+  position: absolute;
+  background: transparent;
+  inset: 5px;
+}
+
+.image_box::before{
+  z-index: -50;
+  content: '';
+  position: absolute;
+  width: convertPX(200);
+  height: 130%;
+  background: linear-gradient(#00000052, #ffffff75);
+  animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.image {
+  width: convertPX(380);
+  height: convertPX(520);
+  border-radius: convertPX(10);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: convertPX(36);
+  margin-bottom: convertPX(10);
+}
+
+.year {
+  font-size: convertPX(14);
+}
+
+.description {
+  margin-top: convertPX(30);
+  width: convertPX(700);
+  line-height: convertPX(22);
+  margin-bottom: convertPX(30);
+}
+
+.show {
+  margin-bottom: convertPX(10);
+}
+
+.buttons_show {
+  max-width: convertPX(500);
+  display: flex;
+  flex-wrap: wrap;
+  gap: convertPX(10);
+}
+
+.button {
+  cursor: pointer;
+  width: fit-content;
+  padding: convertPX(10);
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: convertPX(10);
+  transition: all .1s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: convertPX(0) convertPX(4) convertPX(10).5rem rgba(0, 0, 0, 0.227);
+  }
+  &:active {
+    transform: translateY(0px);
+    // box-shadow: convertPX(0) convertPX(4) convertPX(10).5rem rgba(0, 0, 0, 0.227);
+  }
+}
+
+
+
