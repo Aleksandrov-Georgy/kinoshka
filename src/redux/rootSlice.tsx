@@ -28,10 +28,10 @@ export const rootSlice = createSlice({
       state.cartoons = [...state.cartoons,...action.payload];
     },
     addThrillers: (state, action: PayloadAction<any>) => {
-      state.thrillers = [...state.cartoons,...action.payload];
+      state.thrillers = [...state.thrillers,...action.payload];
     },
     addComedy: (state, action: PayloadAction<any>) => {
-      state.comedy = [...state.cartoons,...action.payload];
+      state.comedy = [...state.comedy,...action.payload];
     },
   },
 })
