@@ -6,5 +6,4 @@
 - JavaScript
 - TypeScript
 - SASS
-- Tanstack/react-query
 - ...
