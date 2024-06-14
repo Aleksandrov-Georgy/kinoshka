@@ -1,7 +1,6 @@
 'use client';
 
 import S from './search.module.scss';
-import { CiSearch } from 'react-icons/ci';
 import { IoMdClose } from 'react-icons/io';
 import { useState } from 'react';
 
@@ -17,7 +16,7 @@ export default function Search() {
         onChange={(e) => setSearchText(e.target.value)}
         required
       />
-      <div className={S.label}>Поиск</div>
+      <div className={S.label}>Поиск (В процессе) </div>
       {searchText && <IoMdClose className={S.icon_close} onClick={() => setSearchText('')} />}
       </div>
     </div>

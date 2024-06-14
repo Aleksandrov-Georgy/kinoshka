@@ -11,7 +11,7 @@ import { addFilms, rootSliceType } from '@/redux/rootSlice';
 
 export default function Home() {
   const dispatch  =  useDispatch();
-  const [loading , setLoading] = useState(false);
+  const [loading , setLoading] = useState(true);
   const { films } = useSelector((state: rootSliceType) => state.films) as any;
 
   useEffect(()  => {

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { linkCat } from '@/Components/Header/Components/linkCat';
 import { usePathname } from 'next/navigation';
 import Logo from './Components/Logo/logo';
+import Search from './Components/Search/Search';
 
 export default function Header() {
   const path = usePathname();
@@ -21,6 +22,7 @@ export default function Header() {
           </Link>
         ))}
       </nav>
+      <Search/>
     </div>
   );
 }
