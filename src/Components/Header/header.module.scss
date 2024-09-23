@@ -1,28 +1,41 @@
-@import "../../../styles/mixins";
-@import "../../../styles/variabals";
+@import '../../../styles/mixins';
+@import '../../../styles/variabals';
 
 .header {
-  padding: convertPX(20) convertPX(40);
+  width: 90%;
+  padding: 20px 0px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.line {
+  width: 100%;
   border-bottom: 1px solid $border-bottom-cap;
 }
 
 .nav {
   display: flex;
-  gap: convertPX(40);
-  // transform: translateX(convertPX(-90));
+  gap: 40px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 
   h2 {
     position: relative;
     font-weight: 700;
-    font-size: convertPX(16);
-    color: $color-Link-cap; 
-    transition: .3s ease;
-    
+    font-size: 14px;
+    color: $color-Link-cap;
+    transition: 0.3s ease;
+
     &:hover {
       color: $color-Link-hover;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 12px;
+      gap: 20px;
     }
   }
 
@@ -34,7 +47,7 @@
     width: 0;
     height: 1px;
     background: $text-page;
-    transition: .3s ease;
+    transition: 0.3s ease;
   }
 
   h2:hover::before {
@@ -42,8 +55,33 @@
   }
 
   .active {
-    font-size: convertPX(16);
+    font-size: 16px;
     color: $text-page;
     border-bottom: 1px solid $text-page;
+
+    @media (max-width: 768px) {
+      font-size: 12px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 10px;
+    }
+
+    @media (max-width: 320px) {
+      font-size: 8px;
+    }
+  }
+}
+
+.burger {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+    width: 30px;
+    height: 30px;
+    svg {
+      width: 30px;
+    }
   }
 }

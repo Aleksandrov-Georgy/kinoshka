@@ -1,24 +1,27 @@
 @import '/styles/mixins.scss';
 @import '/styles/variabals.scss';
 
-
-$width: convertPX(26);
-
 @keyframes rotate {
-  0%, 30% { transform: rotateX(0deg)};
-  70%, 100% { transform: rotateX(360deg)};
-
+  0%,
+  30% {
+    transform: rotateX(0deg);
+  }
+  70%,
+  100% {
+    transform: rotateX(360deg);
+  }
 }
 
 .banner {
   display: flex;
+  margin-left: 70px;
   perspective: 500px;
 }
 
 .panel {
   position: relative;
-  width: $width;
-  height: convertPX(30);
+  width: 26px;
+  height: 30px;
   overflow: hidden;
   animation: rotate 5s var(--delay) infinite ease-in-out;
 }
@@ -27,15 +30,15 @@ $width: convertPX(26);
   position: absolute;
   left: var(--left);
   content: 'фильмы всего мира';
-  font-size: convertPX(26);
+  font-size: 26px;
   width: max-content;
   color: $text-page;
 }
 
 @for $i from 0 to 10 {
   .panel:nth-child(#{$i + 1}) {
-    --left: #{$width * $i * -1};
+    --left: #{26px * $i * -1};
     --hue: #{360 / 10 * $i};
     --delay: #{$i * 0.1s};
-  };
-};
+  }
+}
