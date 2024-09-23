@@ -4,6 +4,7 @@ import 'normalize.css/normalize.css';
 import '../../styles/global.scss';
 import { Roboto } from 'next/font/google';
 import { StoreProvider } from '@/redux/store/StoreProvider';
+import NextTopLoader from 'nextjs-toploader';
 
 const roboto = Montserrat({
   weight: '300',
@@ -27,6 +28,7 @@ export default function RootLayout({
       <html lang="ru">
         <body>
           {children}
+          <NextTopLoader color="red" zIndex={100000000} height={1} />
         </body>
       </html>
     </StoreProvider>

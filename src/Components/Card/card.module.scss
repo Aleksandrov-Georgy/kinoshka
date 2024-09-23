@@ -1,84 +1,80 @@
 @import '/styles/mixins.scss';
 @import '/styles/variabals.scss';
 
-$width-card: convertPX(250);
-
 .card {
   cursor: pointer;
   color: $text-page;
+  // height: 500px;
   position: relative;
-  border-radius: convertPX(20);
-  width: $width-card;
-  transition: .8s ease;
+  border-radius: 20px;
+  width: 100%;
+  transition: 0.8s ease;
   overflow: hidden;
 
-  &:hover, &:focus-within {
+  &:hover,
+  &:focus-within {
     transform: translateY(-2px);
   }
 
   &:hover .info,
   &:focus-within .info {
     transform: translateY(0);
-    transition-delay: .3s;
+    transition-delay: 0.3s;
   }
 
-  &:hover .info > *:not(.title)  {
-   opacity: 1;
-   transition-delay: .6s;
+  &:hover .info > *:not(.title) {
+    opacity: 1;
+    transition-delay: 0.6s;
   }
 }
 
 .image {
-  width: $width-card;
-  height: convertPX(350);
-  border-radius: convertPX(20);
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
 }
 
 .info {
-  padding: convertPX(20);
+  padding: 20px;
   position: absolute;
   top: 0;
   left: 0;
-  width: $width-card;
+  width: 100%;
   height: 100%;
-  background: linear-gradient(
-    hsl(0 0% 0% / 0),
-    hsl(0 0% 0% / 0.4) 10%,
-    hsl(0 0% 0% / 1)
-    );
+  background: linear-gradient(hsl(0 0% 0% / 0), hsl(0 0% 0% / 0.4) 10%, hsl(0 0% 0% / 1));
 
-  border-radius: convertPX(20);
-  transition: .2s ease;
+  border-radius: 20px;
+  transition: 0.2s ease;
   cursor: pointer;
   transform: translateY(85%);
-  transition: transform .5s ease;
+  transition: transform 0.5s ease;
 }
 
 .info > *:not(.title) {
   opacity: 0;
-  transition: opacity .5s linear;
+  transition: opacity 0.5s linear;
 }
 
 .title {
   position: relative;
-  max-width: convertPX(250);
-  font-size: convertPX(14);
+  max-width: 100%;
+  font-size: 14px;
   position: absolute;
-  top: convertPX(20);
+  top: 20px;
   overflow: hidden;
   text-overflow: ellipsis;
 
-  &::after{
+  &::after {
     content: '';
     position: absolute;
-    height: convertPX(7);
+    height: 7px;
     background: $text-page;
     left: 0;
-    bottom: convertPX(-7);
+    bottom: -7px;
     width: 100%;
     transform: scaleX(0);
     transform-origin: left;
-    transition: .8s ease;
+    transition: 0.8s ease;
   }
 }
 
@@ -86,36 +82,36 @@ $width-card: convertPX(250);
   transform: scaleX(1);
 }
 
-
 .description {
-  width: convertPX(210);
+  width: 80%;
   position: absolute;
-  top: convertPX(110);
-  font-size: convertPX(14);
+  top: 110px;
+  font-size: 14px;
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 8;
   overflow: hidden;
-  line-height: convertPX(16);
+  line-height: 16px;
 }
 
 .button {
   text-align: center;
   outline: 1px solid white;
-  font-size: convertPX(14);
+  font-size: 14px;
   position: absolute;
-  bottom: convertPX(20);
-  right: convertPX(20);
-  width: convertPX(100);
-  padding: convertPX(10);
+  bottom: 20px;
+  right: 20px;
+  width: 100px;
+  padding: 10px;
   cursor: pointer;
   background-color: transparent;
   color: $text-page;
-  border-radius: convertPX(8);
-  transition: .1s ease;
+  border-radius: 8px;
+  transition: 0.1s ease;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background: $color-Link-cap;
   }
 }
