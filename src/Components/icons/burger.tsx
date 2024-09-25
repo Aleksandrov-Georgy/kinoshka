@@ -1,22 +1,24 @@
 import React from 'react';
+import S from './icon.module.scss';
 
-export const BurgerIcon = ({ className }: { className?: string }) => {
+interface IProps {
+  className?: string;
+  activeBurger: boolean;
+}
+
+export const BurgerIcon = ({ className, activeBurger }: IProps) => {
   return (
     <svg
-      className={className}
+      className={S.svg + ' ' + className + ' ' + (activeBurger ? S.active : '')}
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
       fill="none"
       stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      strokeWidth="1"
     >
-      <line x1="4" x2="20" y1="12" y2="12" />
-      <line x1="4" x2="20" y1="6" y2="6" />
-      <line x1="4" x2="20" y1="18" y2="18" />
+      <path d="M0,0.5 L20,0.5 M0,9 L20,9 M0,18 L20,18" />
     </svg>
   );
 };

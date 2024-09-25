@@ -16,6 +16,10 @@
   display: flex;
   margin-left: 70px;
   perspective: 500px;
+
+  @media (max-width: 768px) {
+    margin-left: 20px;
+  }
 }
 
 .panel {

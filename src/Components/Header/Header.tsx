@@ -7,10 +7,12 @@ import { usePathname } from 'next/navigation';
 import Logo from './Components/Logo/logo';
 import Search from './Components/Search/Search';
 import { BurgerIcon } from '../icons/burger';
+import { useState } from 'react';
+import { LinksMobile } from './Components/LinksMobile';
 
 export default function Header() {
   const path = usePathname();
-
+  const [activeBurger, setActiveBurger] = useState(false);
   return (
     <>
       <div className={S.header}>
@@ -24,10 +26,13 @@ export default function Header() {
             </Link>
           ))}
         </nav>
-        <BurgerIcon className={S.burger} />
+        <div onClick={() => setActiveBurger(!activeBurger)}>
+          <BurgerIcon className={S.burger} activeBurger={activeBurger} />
+        </div>
         {/* <Search/> */}
       </div>
       <div className={S.line} />
+      <LinksMobile activeBurger={activeBurger} setActiveBurger={setActiveBurger} />
     </>
   );
 }
