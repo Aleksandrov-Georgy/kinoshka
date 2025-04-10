@@ -14,10 +14,10 @@ export default function Home() {
     const dispatch = useDispatch();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
-    const { films } = useSelector((state: rootSliceType) => state.films);
+    const films = useSelector((state: rootSliceType) => state.films);
 
     useEffect(() => {
-        getData();
+        getData(); 
     }, []);
 
     async function getData() {
