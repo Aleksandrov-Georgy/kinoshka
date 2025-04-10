@@ -1,48 +1,88 @@
 @import '/styles/mixins.scss';
 @import '/styles/variabals.scss';
 
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .header {
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 10000;
-  background: #283048; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #859398, #283048); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #859398, #283048);
+  background: linear-gradient(135deg, #1a2a6c 0%, #b21f1f 50%, #fdbb2d 100%);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
 }
 
 .wrapper {
-  margin: 150px 0;
+  margin: 150px auto;
+  padding: 0 20px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
-  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1400px;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 60vh; // Фиксированная высота чтобы избежать прыжков
 
   @media (max-width: 1024px) {
-    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
   }
   @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0 15px;
   }
   @media (max-width: 480px) {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr;
+    padding: 0 10px;
   }
 }
 
-.more_button {
-  position: relative;
-  bottom: 70px;
-  left: 0;
-  width: 100%;
-  height: fit-content;
+.errorContainer {
+  grid-column: 1 / -1;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  height: 50vh;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.errorText {
+  color: #ff6b6b;
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.retryButton {
+  padding: 10px 25px;
+  background: linear-gradient(135deg, #1a2a6c, #b21f1f);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
 }
 
 .footer {
   display: flex;
   justify-content: center;
-  margin-bottom: 50px;
+  margin: 40px 0 60px;
+  padding: 0 20px;
+
+  @media (max-width: 768px) {
+    margin: 30px 0 50px;
+  }
 }

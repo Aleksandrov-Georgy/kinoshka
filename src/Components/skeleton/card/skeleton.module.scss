@@ -1,0 +1,47 @@
+@import '/styles/mixins.scss';
+@import '/styles/variabals.scss';
+
+.skeletonCard {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.skeletonImage {
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.1) 25%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0.1) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.skeletonTitle {
+  height: 24px;
+  width: 80%;
+  margin: 15px auto 10px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+  animation: shimmer 1.5s infinite;
+}
+
+.skeletonYear {
+  height: 16px;
+  width: 40%;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
