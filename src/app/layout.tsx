@@ -28,7 +28,7 @@ export default function RootLayout({
       <html lang="ru">
         <body>
           {children}
-          <NextTopLoader color="red" zIndex={100000000} height={1} />
+          <NextTopLoader color="gold" zIndex={100000000} height={1} />
         </body>
       </html>
     </StoreProvider>

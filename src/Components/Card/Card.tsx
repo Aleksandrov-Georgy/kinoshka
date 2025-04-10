@@ -3,43 +3,53 @@
 import Image from 'next/image';
 import S from './card.module.scss';
 import { useState } from 'react';
-import Preloader from '../Preloader/preloader';
-import stub from '/public/stub.jpg'
 import { FilmType } from '../../../types/filmType';
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation';
 
 interface TProps {
-  film: FilmType
+  film: FilmType;
 }
- 
+
 export default function Card({ film }: TProps) {
   const router = useRouter();
-  const [isLoaded, setIsLoaded] = useState(true);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+
+  if (!film.poster?.previewUrl) return null;
 
   return (
-    <>
-    {film.poster?.previewUrl ?
-      <div className={S.card}>
-         {isLoaded &&  
-            <div className={S.loader}>
-              <Preloader scale={1.2} />
-            </div>
-          }
-          <Image
-            className={S.image}
-            src={film.poster?.previewUrl ? film.poster.previewUrl : stub}
-            alt={film.name ? film.name : 'poster'}
+      <div
+          className={S.card}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+      >
+        {!isLoaded && <div className={S.skeleton} />}
+
+        <Image
+            className={`${S.image} ${isLoaded ? S.loaded : ''}`}
+            src={film.poster.previewUrl}
+            alt={film.name || 'film poster'}
             width={300}
-            height={420}
-            onLoad={() => setIsLoaded(false)}
-          />
-        <div className={S.info}>
+            height={450}
+            quality={85}
+            onLoadingComplete={() => setIsLoaded(true)}
+        />
+
+        <div className={`${S.info} ${isHovered ? S.visible : ''}`}>
           <h2 className={S.title}>{film.name}</h2>
-          <p className={S.description}>{film.description}</p>
-          <button className={S.button} onClick={() => router.push(`/movie/${film.id}`)}>Информация</button>
+          {film.description && (
+              <p className={S.description}>{film.description}</p>
+          )}
+          <button
+              className={S.button}
+              onClick={(e) => {
+                e.stopPropagation();
+                router.push(`/movie/${film.id}`);
+              }}
+          >
+            Подробнее
+          </button>
         </div>
       </div>
-      : null} 
-    </>
   );
 }

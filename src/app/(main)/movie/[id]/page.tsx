@@ -49,8 +49,8 @@ export default function Movie({ params: { id } }: IProp) {
          <div className={!isLoadedImage ? `${S.image_box}` : ''}>
             <Image
                 className={S.image}
-                src={movie!.poster?.url ? movie!.poster.url : stub}
-                alt={movie!.name ? movie!.name : 'poster'}
+                src={movie.poster?.url ? movie.poster.url : stub}
+                alt={movie.name ? movie.name : 'poster'}
                 width={400}
                 height={520}
                 onLoad={() => setIsLoadedImage(false)}
@@ -59,9 +59,9 @@ export default function Movie({ params: { id } }: IProp) {
           
         <div>
           <div className={S.info}>
-            <h1 className={S.title}>{movie!.name}</h1>
-            <p className={S.year}>Год выпуска: {movie!.year}</p>
-            <p className={S.description}>{movie!.description && movie!.description}</p>
+            <h1 className={S.title}>{movie.name}</h1>
+            <p className={S.year}>Год выпуска: {movie.year}</p>
+            <p className={S.description}>{movie.description && movie.description}</p>
           </div>
           <div className={S.show}>
           {
